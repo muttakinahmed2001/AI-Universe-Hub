@@ -14,8 +14,15 @@ function displayData (cards){
         <img src="${card.image}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 >Features</h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <ol>
+          <li> ${card.features[0]}</li>
+          <li> ${card.features[1]}</li>
+          <li> ${card.features[2]}</li>
+          </ol>
+          <hr>
+           
           <h5 class="card-title">${card.name}</h5>
+          <p><i class="fa-regular fa-calendar-days"></i> ${card.published_in}</p>
         </div>
       </div>`
       cardsContainer.appendChild(cardDiv);
