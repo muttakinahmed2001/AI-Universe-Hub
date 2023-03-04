@@ -25,7 +25,11 @@ function displayData(cards, dataLimit) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('col');
     cardDiv.innerHTML = ` <div class="card h-100 p-3 ">
-        <img src="${card.image}" class="card-img-top img-fluid" alt="...">
+     
+     <img src="${card.image}" class="card-img-top img-fluid" alt="...">
+    
+      
+        
         <div class="card-body">
           <h5 >Features</h5>
           <ol>
@@ -74,6 +78,7 @@ const loadModalData = async id => {
 }
 function displayPhoneDetails(details) {
   console.log(details);
+  // const accuracyBtn = document.getElementById('btn-accuracy');
   const descriptionContainer = document.getElementById('description-container');
   descriptionContainer.innerHTML = ` <div class="col">
   <div class="card">
@@ -126,20 +131,41 @@ function displayPhoneDetails(details) {
 </div>
 <div class="col">
   <div class="card">
-    <img src="${details.image_link[0]}
-    " class="card-img-top" alt="...">
+  <div>
+  <img src="${details.image_link[0]}
+  " class="card-img-top" alt="...">
+  <div id="btn-accuracy" class="card-img-overlay"><button   class="btn btn-success ">  94% Accuracy</button></div>
+  
+  </div>
+    
     <div class="card-body mt-2">
       <h5 class="card-title text-center mb-2">${details.input_output_examples ?details.input_output_examples[0].input : 'No no yet'
       }</h5>
       <p class="text-center">${details.input_output_examples ?details.input_output_examples[0].output : 'No no yet'}
-       
+
+     
+      
     </div>
   </div>
 </div>`
+// ${details.accuracy ? accuracyBtn.classList.remove('d-none') : accuracy.classList.add('d-none')}
+// function accuracy(have){
+  
+//   if(have===true){
+// accuracyBtn.classList.remove('d-none');
+//   }
+//   else{
+//     accuracyBtn.classList.add('d-none')
+//   }
+// }
+
 
 }
 
 
+loadData(6);
+
+toggle(true);
 
 
 
@@ -150,7 +176,4 @@ document.getElementById('btn-see-more').addEventListener('click', function () {
 })
 
 
-loadData(6);
-
-toggle(true);
 
