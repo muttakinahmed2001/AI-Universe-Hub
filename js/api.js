@@ -83,19 +83,19 @@ function displayPhoneDetails(details) {
       <h4>  ${details.description} </h4>
       <div class="d-flex gap-4 ">
        <div class="d-flex  flex-column border border border-danger  p-1">
-       <div class=" fw-bold text-success-emphasis">${details.pricing[0].price ? details.pricing[0].price : 'no plan found'}/
+       <div class=" fw-bold text-success-emphasis">${details.pricing ? details.pricing[0].price : 'Free of cost'}/
        </div>
-       <div>${details.pricing[0].plan ? details.pricing[0].plan : 'no plan found'}</div>
-       </div>
-       <div class="d-flex flex-col  flex-column border border border-danger p-1">
-       <div class=" fw-bold text-warning">${details.pricing[1].price ? details.pricing[1].price : 'no plan found'}/
-       </div>
-       <div>${details.pricing[1].plan ? details.pricing[1].plan : 'no plan found'}</div>
+       <div>${details.pricing ? details.pricing[0].plan : 'Free of cost'}</div>
        </div>
        <div class="d-flex flex-col  flex-column border border border-danger p-1">
-       <div class=" fw-bold text-danger">${details.pricing[2].price ? details.pricing[2].price : 'no plan found'}/
+       <div class=" fw-bold text-warning">${details.pricing ? details.pricing[1].price : 'Free of cost'}/
        </div>
-       <div>${details.pricing[2].plan ? details.pricing[2].plan : 'no plan found'}</div>
+       <div>${details.pricing ? details.pricing[1].plan : 'Free of cost'}</div>
+       </div>
+       <div class="d-flex flex-col  flex-column border border border-danger p-1">
+       <div class=" fw-bold text-danger">${details.pricing ? details.pricing[2].price : 'Free of cost'}/
+       </div>
+       <div>${details.pricing? details.pricing[2].plan : 'Free of cost'}</div>
        </div>
        
   
@@ -114,9 +114,9 @@ function displayPhoneDetails(details) {
       <div>
       <h4>Integrations</h4>
       <ul>
-      <li>${details.integrations[0] ? details.integrations[0] : 'no data found' }</li>
-      <li>${details.integrations[1] ? details.integrations[1] : 'no data found' }</li>
-      <li>${details.integrations[2] ? details.integrations[2] : 'no data found' }</li> 
+      <li>${details.integrations ? details.integrations[0] : 'no data found' }</li>
+      <li>${details.integrations ? details.integrations[1] : 'no data found' }</li>
+      <li>${details.integrations ? details.integrations[2] : 'no data found' }</li> 
         </ul>
        </div>
    </div>
@@ -129,9 +129,9 @@ function displayPhoneDetails(details) {
     <img src="${details.image_link[0]}
     " class="card-img-top" alt="...">
     <div class="card-body mt-2">
-      <h5 class="card-title text-center mb-2">${details.input_output_examples[0].input
+      <h5 class="card-title text-center mb-2">${details.input_output_examples ?details.input_output_examples[0].input : 'No no yet'
       }</h5>
-      <p class="text-center">${details.input_output_examples[0].output}</p>
+      <p class="text-center">${details.input_output_examples ?details.input_output_examples[0].output : 'No no yet'}
        
     </div>
   </div>
