@@ -114,9 +114,9 @@ function displayPhoneDetails(details) {
       <div>
       <h4>Integrations</h4>
       <ul>
-      <li>${details.integrations[0] ? details.integrations[0] : 'no integration' }</li>
-      <li>${details.integrations[1] ? details.integrations[1] : 'no integration' }</li>
-      <li>${details.integrations[2] ? details.integrations[2] : 'no integration' }</li> 
+      <li>${details.integrations[0] ? details.integrations[0] : 'no data found' }</li>
+      <li>${details.integrations[1] ? details.integrations[1] : 'no data found' }</li>
+      <li>${details.integrations[2] ? details.integrations[2] : 'no data found' }</li> 
         </ul>
        </div>
    </div>
@@ -128,9 +128,10 @@ function displayPhoneDetails(details) {
   <div class="card">
     <img src="${details.image_link[0]}
     " class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <div class="card-body mt-2">
+      <h5 class="card-title text-center">${details.input_output_examples[0].input
+      }</h5>
+       
     </div>
   </div>
 </div>`
