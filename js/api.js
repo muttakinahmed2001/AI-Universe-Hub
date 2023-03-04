@@ -24,8 +24,8 @@ function displayData(cards, dataLimit) {
   cards.forEach(card => {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('col');
-    cardDiv.innerHTML = ` <div class="card h-100 p-3">
-        <img src="${card.image}" class="card-img-top" alt="...">
+    cardDiv.innerHTML = ` <div class="card h-100 p-3 ">
+        <img src="${card.image}" class="card-img-top img-fluid" alt="...">
         <div class="card-body">
           <h5 >Features</h5>
           <ol>
@@ -129,8 +129,9 @@ function displayPhoneDetails(details) {
     <img src="${details.image_link[0]}
     " class="card-img-top" alt="...">
     <div class="card-body mt-2">
-      <h5 class="card-title text-center">${details.input_output_examples[0].input
+      <h5 class="card-title text-center mb-2">${details.input_output_examples[0].input
       }</h5>
+      <p class="text-center">${details.input_output_examples[0].output}</p>
        
     </div>
   </div>
