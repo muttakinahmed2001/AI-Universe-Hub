@@ -119,6 +119,7 @@ function displayPhoneDetails(details) {
       <div>
       <h4>Integrations</h4>
       <ul>
+      
       <li>${details.integrations ? details.integrations[0] : 'no data found' }</li>
       <li>${details.integrations ? details.integrations[1] : 'no data found' }</li>
       <li>${details.integrations ? details.integrations[2] : 'no data found' }</li> 
@@ -134,7 +135,8 @@ function displayPhoneDetails(details) {
   <div>
   <img src="${details.image_link[0]}
   " class="card-img-top" alt="...">
-  <div id="btn-accuracy" class="card-img-overlay"><button   class="btn btn-success ">  94% Accuracy</button></div>
+  <span>${details?.accuracy?.score===null ? '':`<div id="btn-accuracy" class="card-img-overlay"><button   class="btn btn-success ">   ${details.accuracy.score*100}% accuracy
+  </button></div>`}<span>
   
   </div>
     
@@ -148,16 +150,7 @@ function displayPhoneDetails(details) {
     </div>
   </div>
 </div>`
-// ${details.accuracy ? accuracyBtn.classList.remove('d-none') : accuracy.classList.add('d-none')}
-// function accuracy(have){
-  
-//   if(have===true){
-// accuracyBtn.classList.remove('d-none');
-//   }
-//   else{
-//     accuracyBtn.classList.add('d-none')
-//   }
-// }
+ 
 
 
 }
