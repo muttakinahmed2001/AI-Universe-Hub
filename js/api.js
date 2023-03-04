@@ -1,12 +1,26 @@
-function loadData (){
+function loadData (dataLimit){
     fetch('https://openapi.programming-hero.com/api/ai/tools')
     .then(res => res.json())
-    .then(data =>displayData(data.data.tools));
+    .then(data =>displayData(data.data.tools,dataLimit));
 }
 
-function displayData (cards){
+
+
+function displayData (cards,dataLimit){
     const cardsContainer = document.getElementById('cards-container');
+    cardsContainer.textContent='';
+    
     console.log(cards)
+    const SeeMore = document.getElementById('btn-see-more');
+    if(dataLimit){
+      cards= cards.slice(0,6)
+      SeeMore.classList.remove('d-none');
+      
+    }
+     
+    else{
+      SeeMore.classList.add('d-none');
+    }
     cards.forEach(card =>{
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('col');
@@ -24,27 +38,47 @@ function displayData (cards){
           <h5 class="card-title">${card.name}</h5>
           <div class="d-flex justify-content-between">
           <p><i class="fa-regular fa-calendar-days"></i> ${card.published_in}</p>
-          <button><i class="fa-solid fa-circle-arrow-right"></i></button></div>
+          <button onclick="loadModalData(${card.id})" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="fa-solid fa-circle-arrow-right"></i>
+</button>
+          </div>
+          
+          
           
         </div>
       </div>`
       cardsContainer.appendChild(cardDiv);
       toggle(false);
+      
     })
-   
+    
 }
 
 function toggle (isLoading){
-  const spinners = document.getElementById('spinners');
+  const spinner = document.getElementById('spinner');
   if(isLoading===true){
-    spinners.classList.remove('d-none')
+    spinner.classList.remove('d-none')
   }
   else{
-    spinners.classList.add('d-none');
+    spinner.classList.add('d-none');
   }
     
   
 }
+function loadModalData(id){
+  fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
+  .then(res => res.json())
+  .then(data => console.log(data))
+}
 
-loadData()
+document.getElementById('btn-see-more').addEventListener('click',function(){
+  loadData();
+   
+  
+})
+
+
+loadData(6);
+
 toggle(true);
+
