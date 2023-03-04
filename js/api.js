@@ -78,21 +78,21 @@ function displayPhoneDetails(details) {
   descriptionContainer.innerHTML = ` <div class="col">
   <div class="card">
   
-    <div class="card-body">
+    <div class="card-body border border-danger-subtle rounded-2 bg-danger-subtle">
        
       <h4>  ${details.description} </h4>
       <div class="d-flex gap-4 ">
-       <div class="d-flex  flex-column border border-light-subtle p-1">
+       <div class="d-flex  flex-column border border border-danger  p-1">
        <div class=" fw-bold text-success-emphasis">${details.pricing[0].price ? details.pricing[0].price : 'no plan found'}/
        </div>
        <div>${details.pricing[0].plan ? details.pricing[0].plan : 'no plan found'}</div>
        </div>
-       <div class="d-flex flex-col  flex-column border border-light-subtle p-1">
+       <div class="d-flex flex-col  flex-column border border border-danger p-1">
        <div class=" fw-bold text-warning">${details.pricing[1].price ? details.pricing[1].price : 'no plan found'}/
        </div>
        <div>${details.pricing[1].plan ? details.pricing[1].plan : 'no plan found'}</div>
        </div>
-       <div class="d-flex flex-col  flex-column border border-light-subtle p-1">
+       <div class="d-flex flex-col  flex-column border border border-danger p-1">
        <div class=" fw-bold text-danger">${details.pricing[2].price ? details.pricing[2].price : 'no plan found'}/
        </div>
        <div>${details.pricing[2].plan ? details.pricing[2].plan : 'no plan found'}</div>
